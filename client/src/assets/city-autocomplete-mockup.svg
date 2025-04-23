@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="600" height="400" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="600" height="400" fill="#F9FAFB" />
+  
+  <!-- Search Bar Container -->
+  <rect x="100" y="50" width="400" height="70" rx="8" fill="white" stroke="#E5E7EB" />
+  
+  <!-- Search Icon -->
+  <circle cx="130" cy="85" r="15" fill="#F3F4F6" />
+  <path d="M137 85C137 88.866 133.866 92 130 92C126.134 92 123 88.866 123 85C123 81.134 126.134 78 130 78C133.866 78 137 81.134 137 85Z" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M135 90L140 95" stroke="#9CA3AF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  
+  <!-- Search Input -->
+  <rect x="155" y="70" width="320" height="30" rx="4" fill="#F9FAFB" stroke="#D1D5DB" />
+  <text x="170" y="90" font-family="sans-serif" font-size="14" fill="#111827">Tor</text>
+  
+  <!-- Dropdown Menu -->
+  <rect x="155" y="110" width="320" height="180" rx="8" fill="white" stroke="#E5E7EB" filter="drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.1))" />
+  
+  <!-- Dropdown Items -->
+  <rect x="155" y="110" width="320" height="45" rx="8 8 0 0" fill="#F3F4F6" />
+  <text x="190" y="137" font-family="sans-serif" font-size="14" font-weight="500" fill="#111827">Toronto, Ontario</text>
+  <circle cx="175" cy="135" r="8" fill="#F3F4F6" />
+  <path d="M175 130C175 130 172 132.5 175 137.5C178 132.5 175 130 175 130Z" stroke="#6B7280" stroke-width="1.5" />
+  <circle cx="175" cy="135" r="2" fill="#6B7280" />
+  
+  <text x="190" y="182" font-family="sans-serif" font-size="14" fill="#111827">Torbay, Newfoundland</text>
+  <circle cx="175" cy="180" r="8" fill="#F9FAFB" />
+  <path d="M175 175C175 175 172 177.5 175 182.5C178 177.5 175 175 175 175Z" stroke="#6B7280" stroke-width="1.5" />
+  <circle cx="175" cy="180" r="2" fill="#6B7280" />
+  
+  <text x="190" y="227" font-family="sans-serif" font-size="14" fill="#111827">Thornhill, Ontario</text>
+  <circle cx="175" cy="225" r="8" fill="#F9FAFB" />
+  <path d="M175 220C175 220 172 222.5 175 227.5C178 222.5 175 220 175 220Z" stroke="#6B7280" stroke-width="1.5" />
+  <circle cx="175" cy="225" r="2" fill="#6B7280" />
+  
+  <text x="190" y="272" font-family="sans-serif" font-size="14" fill="#111827">Thunder Bay, Ontario</text>
+  <circle cx="175" cy="270" r="8" fill="#F9FAFB" />
+  <path d="M175 265C175 265 172 267.5 175 272.5C178 267.5 175 265 175 265Z" stroke="#6B7280" stroke-width="1.5" />
+  <circle cx="175" cy="270" r="2" fill="#6B7280" />
+  
+  <!-- Title -->
+  <text x="100" y="30" font-family="sans-serif" font-size="16" font-weight="600" fill="#111827">City Autocomplete Search</text>
+  
+  <!-- Description -->
+  <text x="100" y="350" font-family="sans-serif" font-size="14" fill="#6B7280">Type to search for Canadian cities. Suggestions appear as you type.</text>
+</svg>

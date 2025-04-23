@@ -1,0 +1,164 @@
+✅ STEP 1: Tailwind Setup (Skip if already installed)
+If not already configured:
+
+In shell:
+
+bash
+Copy
+Edit
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+Add to tailwind.config.js:
+
+js
+Copy
+Edit
+content: ["./src/**/*.{js,jsx,ts,tsx}"],
+theme: {
+  extend: {
+    fontFamily: {
+      sans: ["Inter", "sans-serif"],
+    },
+    colors: {
+      midnight: "#0F172A",
+      slate: "#64748B",
+      softwhite: "#F1F5F9",
+      accent: "#2563EB",
+    },
+    borderRadius: {
+      xl: "1rem",
+      "2xl": "1.5rem",
+    },
+    boxShadow: {
+      soft: "0 10px 20px rgba(0, 0, 0, 0.05)",
+    },
+  },
+},
+plugins: [],
+In index.css or App.css, include:
+
+css
+Copy
+Edit
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+And in index.html or root layout, import Inter font:
+
+html
+Copy
+Edit
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+✨ STEP 2: Apply Aesthetic Changes to UI
+Update your App.jsx or Layout.jsx components with:
+
+jsx
+Copy
+Edit
+<div className="bg-softwhite min-h-screen text-midnight font-sans">
+  <Navbar />
+  <main className="max-w-7xl mx-auto px-6 py-10">
+    <Outlet />
+  </main>
+</div>
+🧱 STEP 3: Modular Components (Add These)
+📍 components/Card.jsx
+jsx
+Copy
+Edit
+export default function Card({ children }) {
+  return (
+    <div className="bg-white rounded-2xl shadow-soft p-6">
+      {children}
+    </div>
+  );
+}
+📍 components/CTAButton.jsx
+jsx
+Copy
+Edit
+import { motion } from "framer-motion";
+
+export default function CTAButton({ label = "Get Started" }) {
+  return (
+    <motion.button
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className="bg-accent text-white py-3 px-6 rounded-xl font-medium shadow-md"
+    >
+      {label}
+    </motion.button>
+  );
+}
+📍 components/Navbar.jsx
+jsx
+Copy
+Edit
+export default function Navbar() {
+  return (
+    <header className="sticky top-0 bg-white/80 backdrop-blur-lg shadow-sm z-50">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <h1 className="text-xl font-semibold text-midnight">Rentible</h1>
+        <nav className="space-x-4 text-slate-600">
+          <a href="/dashboard" className="hover:text-accent">Dashboard</a>
+          <a href="/profile" className="hover:text-accent">Profile</a>
+          <a href="/logout" className="hover:text-accent">Logout</a>
+        </nav>
+      </div>
+    </header>
+  );
+}
+📄 STEP 4: Update Landing Page
+Replace your initial landing JSX with something like this:
+
+jsx
+Copy
+Edit
+import CTAButton from "../components/CTAButton";
+
+export default function Landing() {
+  return (
+    <section className="text-center py-20 px-6">
+      <h1 className="text-5xl font-bold text-midnight">Welcome to Rentible</h1>
+      <p className="text-slate-600 mt-4 max-w-xl mx-auto text-lg">
+        Leasing reimagined. For Ontario landlords and tenants who want less friction, more freedom.
+      </p>
+      <div className="mt-8">
+        <CTAButton label="Get Started Free" />
+      </div>
+    </section>
+  );
+}
+🌟 STEP 5: Add Framer Motion
+bash
+Copy
+Edit
+npm install framer-motion
+Use it for modal transitions, button animations, or future page transitions.
+
+🎁 BONUS: Improve Dashboard Page
+Add this to your /pages/dashboard.jsx:
+
+jsx
+Copy
+Edit
+import Card from "../components/Card";
+
+export default function Dashboard() {
+  return (
+    <div className="grid md:grid-cols-3 gap-6">
+      <Card>
+        <h2 className="text-lg font-semibold mb-2">Tenant Score</h2>
+        <p className="text-slate-600">752 — Excellent</p>
+      </Card>
+      <Card>
+        <h2 className="text-lg font-semibold mb-2">Upcoming Viewing</h2>
+        <p className="text-slate-600">Tomorrow @ 2PM</p>
+      </Card>
+      <Card>
+        <h2 className="text-lg font-semibold mb-2">Pending Lease</h2>
+        <p className="text-slate-600">#Rent-1244 needs signature</p>
+      </Card>
+    </div>
+  );
+}

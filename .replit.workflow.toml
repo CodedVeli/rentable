@@ -1,0 +1,3 @@
+[commands]
+start = "node start-app.js"
+run = "npm run dev"

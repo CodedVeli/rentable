@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+    font-family: 'Inter', sans-serif !important;
+  }
+
+  html {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+/* Ensure dashboard components also use Inter */
+.dashboard-container * {
+  font-family: 'Inter', sans-serif !important;
+}
+
+/* Fix for any elements with !important declarations */
+h1, h2, h3, h4, h5, h6, p, span, div, button, input, select, textarea {
+  font-family: 'Inter', sans-serif !important;
+}
